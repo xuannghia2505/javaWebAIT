@@ -25,9 +25,9 @@
 					<li><a href="spring?springIndex=1">Spring</a></li>
 					<li><a href="summer?summerIndex=1">Summer</a></li>
 					<li><a href="autumn?autumnIndex=1">Autumn</a></li>
-					<li><a href="winter?winterIndex=1">Winter</a></li>
-					<li><a href="basic?basicIndex=1">Basic clothes</a></li>
-					<li><a href="modern?modernIndex=1">Modern clothes</a></li>
+					<li><a href="#">Winter</a></li>
+					<li><a href="#">Basic clothes</a></li>
+					<li><a href="#">Modern clothes</a></li>
 				</ul></li>
 			<c:if test="${sessionScope.acc==null }">
 				<li><a href="login.jsp">LOGIN</a></li>
