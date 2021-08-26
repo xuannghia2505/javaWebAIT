@@ -42,12 +42,13 @@
 					<td><button onclick="edit(${o.id})">EDIT</button></td>
 					<td><button onclick="deleteAcc(${o.id})">DELETE</button></td>
 				</tr>
+				<form action="editUser" method="post">
 				<div class="modal__editUser" id="modal__editUser${o.id}">
-       			
-        		<p class="textEdit">Bạn đang chỉnh sửa tài khoản có số ID:${o.id}</p>
-        		Username: <input type="text" value="${o.username}" >
-        		<button  onclick="doneEdit(${o.id},${o.username})" >Submit</button>		
+        		<p class="textEdit" >Bạn đang chỉnh sửa tài khoản có số ID: <input style="width:20px;" value=${o.id} name="id"></input></p>
+        		Username: <input type="text" value="${o.username}" name="nameAfterEdit">
+        		<button >Submit</button>		
    				 </div>
+   				 </form>
 			</c:forEach>
 			</tbody>
 			
@@ -66,7 +67,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
 		
-		function doneEdit(id,username){
+	/* 	function doneEdit(id,username){
 			$.ajax({
 				url : "/shopAoquan/editUser",
 				type : "post", //send it through get method
@@ -82,7 +83,7 @@
 					//Do Something to handle error
 				}
 			});
-		}
+		} */
 		function edit(id){
 		const element = "modal__editUser"+id;
      	document.getElementById(element).style.display = "block";

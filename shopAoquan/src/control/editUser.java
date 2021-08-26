@@ -30,15 +30,14 @@ public class editUser extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String usernameEdit = request.getParameter("username");
-		System.out.println(usernameEdit);
+		String usernameEdit = request.getParameter("nameAfterEdit");
 		int id = Integer.parseInt(request.getParameter("id"));
-		System.out.println(id);
 		DAO dao = new DAO();
 		dao.updateUser(id, usernameEdit);
 		List<Account> listAcc = new ArrayList<>();
 		listAcc = dao.getAllUser();
 		request.setAttribute("listAcc", listAcc);
+		request.getRequestDispatcher("quantriAcc.jsp").forward(request, response);
 	}
 
 }
